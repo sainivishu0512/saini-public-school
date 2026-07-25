@@ -276,7 +276,7 @@ export const BigInteractiveFlowerMascot = () => {
         </g>
 
         {/* Flying Cute Butterfly Beside Flower Mascot */}
-        <g transform="translate(110, 100)">
+        <g transform="translate(50, 75)">
           <CuteButterfly wingColor="#A78BFA" size={54} />
         </g>
 
