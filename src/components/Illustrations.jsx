@@ -120,11 +120,22 @@ export const CuteMushroom = ({ size = 40, capColor = '#F472B6', className = '' }
   </svg>
 );
 
-// LARGE INTERACTIVE STORYBOOK BLOOMING FLOWER MASCOT
+// LARGE INTERACTIVE STORYBOOK BLOOMING FLOWER MASCOT WITH AUTOMATIC EYE BLINKING
 export const BigInteractiveFlowerMascot = () => {
   const containerRef = useRef(null);
   const [pupilOffset, setPupilOffset] = useState({ x: 0, y: 0 });
   const [isHappy, setIsHappy] = useState(false);
+  const [isBlinking, setIsBlinking] = useState(false);
+
+  // Automatic Eye Blinking Cycle (Every 3.5 seconds)
+  useEffect(() => {
+    const blinkTimer = setInterval(() => {
+      setIsBlinking(true);
+      setTimeout(() => setIsBlinking(false), 200);
+    }, 3500);
+
+    return () => clearInterval(blinkTimer);
+  }, []);
 
   // Mouse Pupil Eye Tracking Logic
   useEffect(() => {
@@ -144,7 +155,7 @@ export const BigInteractiveFlowerMascot = () => {
         y: Math.sin(angle) * dist,
       });
 
-      // Check if mouse is hovering over any button or interactive link (NOT flower itself)
+      // Check if mouse is hovering over any button or interactive element
       const target = e.target;
       const hoveringButton =
         target.closest('button') ||
@@ -167,8 +178,6 @@ export const BigInteractiveFlowerMascot = () => {
     >
       {/* Background Soft Pastel Glow Aura */}
       <div className={`absolute inset-0 rounded-full blur-3xl transition-all duration-500 ${isHappy ? 'bg-gradient-to-tr from-sky-400/70 via-pink-400/60 to-sunshine-300/70 scale-125' : 'bg-gradient-to-tr from-sky-100/50 via-pink-100/40 to-sunshine-100/50 scale-100'}`}></div>
-
-
 
       {/* Main Big Interactive Flower Canvas */}
       <motion.svg
@@ -221,10 +230,12 @@ export const BigInteractiveFlowerMascot = () => {
           <circle cx="-42" cy="18" r="14" fill="#F472B6" opacity={isHappy ? 0.95 : 0.6} />
           <circle cx="42" cy="18" r="14" fill="#F472B6" opacity={isHappy ? 0.95 : 0.6} />
 
-          {/* Left Eye Socket & Pupil Tracking */}
+          {/* Left Eye Socket & Pupil Tracking / Blinking */}
           <circle cx="-25" cy="-10" r="14" fill="#FFFFFF" stroke="#334155" strokeWidth="3" />
           {isHappy ? (
             <path d="M -36 -10 Q -25 -25 -14 -10" stroke="#334155" strokeWidth="4.5" strokeLinecap="round" fill="none" />
+          ) : isBlinking ? (
+            <path d="M -34 -10 Q -25 -5 -16 -10" stroke="#334155" strokeWidth="4" strokeLinecap="round" fill="none" />
           ) : (
             <g transform={`translate(${pupilOffset.x}, ${pupilOffset.y})`}>
               <circle cx="-25" cy="-10" r="7.5" fill="#1E293B" />
@@ -233,10 +244,12 @@ export const BigInteractiveFlowerMascot = () => {
             </g>
           )}
 
-          {/* Right Eye Socket & Pupil Tracking */}
+          {/* Right Eye Socket & Pupil Tracking / Blinking */}
           <circle cx="25" cy="-10" r="14" fill="#FFFFFF" stroke="#334155" strokeWidth="3" />
           {isHappy ? (
             <path d="M 14 -10 Q 25 -25 36 -10" stroke="#334155" strokeWidth="4.5" strokeLinecap="round" fill="none" />
+          ) : isBlinking ? (
+            <path d="M 16 -10 Q 25 -5 34 -10" stroke="#334155" strokeWidth="4" strokeLinecap="round" fill="none" />
           ) : (
             <g transform={`translate(${pupilOffset.x}, ${pupilOffset.y})`}>
               <circle cx="25" cy="-10" r="7.5" fill="#1E293B" />
