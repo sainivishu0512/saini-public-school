@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sky-light: #F0F9FF;
+  --color-sky-DEFAULT: #E0F2FE;
+  --color-sky-soft: #BAE6FD;
+  --color-sky-vibrant: #38BDF8;
+  --color-sky-deep: #0284C7;
+
+  --color-mint-light: #F0FDF4;
+  --color-mint-DEFAULT: #D1FAE5;
+  --color-mint-soft: #A7F3D0;
+  --color-mint-vibrant: #34D399;
+  --color-mint-deep: #059669;
+
+  --color-sunshine-light: #FEFCE8;
+  --color-sunshine-DEFAULT: #FEF08A;
+  --color-sunshine-soft: #FDE047;
+  --color-sunshine-vibrant: #EAB308;
+  --color-sunshine-deep: #CA8A04;
+
+  --color-coral-light: #FFF7ED;
+  --color-coral-DEFAULT: #FFEDD5;
+  --color-coral-soft: #FDBA74;
+  --color-coral-vibrant: #FB923C;
+  --color-coral-deep: #EA580C;
+
+  --color-lavender-light: #F5F3FF;
+  --color-lavender-DEFAULT: #EDE9FE;
+  --color-lavender-soft: #DDD6FE;
+  --color-lavender-vibrant: #A78BFA;
+  --color-lavender-deep: #7C3AED;
+
+  --color-pinky-light: #FDF2F8;
+  --color-pinky-DEFAULT: #FCE7F3;
+  --color-pinky-soft: #FBCFE8;
+  --color-pinky-vibrant: #F472B6;
+  --color-pinky-deep: #DB2777;
+
+  --color-warm-cream: #FFFDF9;
+
+  --font-heading: 'Fredoka', 'Quicksand', sans-serif;
+  --font-body: 'Nunito', 'Inter', sans-serif;
+  --font-storybook: 'Short Stack', 'Fredoka', cursive;
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+  --radius-storybook: 3rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: linear-gradient(180deg, #F0F9FF 0%, #FFFDF9 30%, #FDF2F8 70%, #F0FDF4 100%);
+    font-family: 'Nunito', sans-serif;
+    color: #334155;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', cursive, sans-serif;
+  }
+}
+
+/* Custom Soft Pastel Gradients */
+.bg-pastel-hero {
+  background: radial-gradient(circle at 10% 20%, rgba(224, 242, 254, 0.8) 0%, rgba(253, 226, 243, 0.7) 45%, rgba(254, 240, 138, 0.5) 80%);
+}
+
+.bg-pastel-card-pink {
+  background: linear-gradient(135deg, #FDF2F8 0%, #FCE7F3 50%, #FFEDD5 100%);
+}
+
+.bg-pastel-card-sky {
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #EDE9FE 100%);
+}
+
+.bg-pastel-card-mint {
+  background: linear-gradient(135deg, #F0FDF4 0%, #D1FAE5 50%, #FEF08A 100%);
+}
+
+.bg-pastel-card-sunshine {
+  background: linear-gradient(135deg, #FEFCE8 0%, #FEF08A 50%, #FFEDD5 100%);
+}
+
+.bg-pastel-card-lavender {
+  background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 50%, #FCE7F3 100%);
+}
+
+.bg-pastel-card-coral {
+  background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 50%, #FEF08A 100%);
+}
+
+/* Multi-color Pastel Text Gradient */
+.text-pastel-gradient {
+  background: linear-gradient(135deg, #DB2777 0%, #EA580C 35%, #7C3AED 70%, #0284C7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pastel Glassmorphism Cards */
+.glass-card-pastel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 20px 40px -10px rgba(244, 114, 182, 0.15), 0 10px 20px -5px rgba(56, 189, 248, 0.12);
+}
+
+.glass-pill-pastel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(253, 242, 248, 0.85));
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(251, 207, 232, 0.6);
+  box-shadow: 0 4px 15px rgba(244, 114, 182, 0.12);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0F9FF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #F472B6, #A78BFA);
+  border-radius: 9999px;
+  border: 3px solid #F0F9FF;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #DB2777, #7C3AED);
+}
