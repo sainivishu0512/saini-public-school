@@ -168,22 +168,7 @@ export const BigInteractiveFlowerMascot = () => {
       {/* Background Soft Pastel Glow Aura */}
       <div className={`absolute inset-0 rounded-full blur-3xl transition-all duration-500 ${isHappy ? 'bg-gradient-to-tr from-sky-400/70 via-pink-400/60 to-sunshine-300/70 scale-125' : 'bg-gradient-to-tr from-sky-100/50 via-pink-100/40 to-sunshine-100/50 scale-100'}`}></div>
 
-      {/* Floating Sparkles when Button Hovered */}
-      <AnimatePresence>
-        {isHappy && (
-          <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.8 }}
-            animate={{ opacity: 1, y: -25, scale: 1.15 }}
-            exit={{ opacity: 0, y: -45 }}
-            className="absolute top-4 left-1/2 transform -translate-x-1/2 z-30 pointer-events-none flex gap-4 text-3xl drop-shadow-md"
-          >
-            <span>🌸</span>
-            <span>💖</span>
-            <span>✨</span>
-            <span>🌻</span>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
 
       {/* Main Big Interactive Flower Canvas */}
       <motion.svg
