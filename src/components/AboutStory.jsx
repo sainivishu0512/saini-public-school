@@ -61,7 +61,7 @@ export const AboutStory = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-50 border border-pink-200 text-pink-700 font-extrabold text-xs tracking-wide uppercase">
-            <Heart className="w-3.5 h-3.5 fill-pink-600" /> Educational Philosophy
+            <Sparkles className="w-3.5 h-3.5 text-pink-600" /> Educational Philosophy
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-slate-900 tracking-tight">
             Nurturing Every Unique <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Little Blossom</span>
